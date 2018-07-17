@@ -1,11 +1,11 @@
 Constructors
-Constructors have the same name as the name of the class and unlike other methods (and functions) do not have a return type.
+Constructors have the same name as the name of its classes. Unlike other methods and functions, constructors do not have a return type.
 
 ArrayClass:: indicates that this defines a method within the class ArrayClass. Every method’s name must be preceded by the class name and the scope resolution operator (::).
 
-A constructor initializes the attributes of an object. For ArrayClass this entails setting the capacity of the array, creating an array with that capacity in dynamic memory and setting the number of elements currently stored in the array to zero.
+A constructor initializes the attributes of an object. For ArrayClass, its constructor entails setting the capacity of the array, creating an array with that capacity in dynamic memory, and setting the elements currently stored in the array to the value zero.
 
-The variables arrSize, currentSize, and arr are attributes of an ArrayClass object and are not variables declared in the constructor. Default initializations have been provided in the class definition. This constructor accepts the default of 0 for currentSize but needs to override the defaults for arrSize and arr.
+The variables arrSize, currentSize, and arr are attributes of an ArrayClass object. They are not variables declared in the constructor. Default initializations have been provided in the class definition. This constructor accepts the default value of 0 for currentSize, but it needs to override the defaults for arrSize and arr.
 
 We initialize them in the constructor by listing them in the member initialization list (after the :) and specifying their initial values (using the C++11 syntax of {} for initializations). Once these are all initialized, there is nothing more for the constructor to do, so its body is empty.
 
@@ -14,4 +14,4 @@ Member variables must appear in the initializer list in the order they are decla
 
 Destructor
 The destructor is responsible for de-allocating any dynamic memory that has been allocated for an object. The name of the destructor is always the name of the class preceded by a tilde (~). Neither constructors nor destructors have return types. Destructors should never (or at least very rarely) be called explicitly. They are invoked either explicitly by a call to delete or automatically when an object’s lifetime has expired.
-The delete operator deletes any dynamic memory associated with a pointer; in this case it must be followed by [] since arr was allocated as an array using new arr[...].
+The delete operator deletes any dynamic memory associated with a pointer. In this case, it must be followed by [] since arr was allocated as an array using new arr[...].
